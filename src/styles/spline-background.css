@@ -1,0 +1,49 @@
+/* Spline background with iframe cropping to remove watermark */
+.spline-background-cropped {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: calc(100% + 80px) !important; /* Extend height to push watermark below viewport */
+  border: none !important;
+  z-index: 1 !important;
+  
+  /* Ensure visibility */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  
+  /* Performance optimization */
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  
+  /* Crop the bottom to hide watermark */
+  clip-path: inset(0 0 80px 0) !important;
+  overflow: hidden !important;
+}
+
+/* Content overlay for proper layering */
+.content-overlay {
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.content-overlay > * {
+  pointer-events: auto;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .spline-background-cropped {
+    height: calc(100% + 60px) !important;
+    clip-path: inset(0 0 60px 0) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .spline-background-cropped {
+    height: calc(100% + 50px) !important;
+    clip-path: inset(0 0 50px 0) !important;
+  }
+}

@@ -1,0 +1,132 @@
+/* ULTRA AGGRESSIVE Spline iframe styling for maximum quality */
+.spline-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* MAXIMUM QUALITY ENFORCEMENT - NO COMPROMISES */
+iframe[src*="spline.design"],
+.spline-iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  z-index: 10 !important; /* Higher z-index to force visibility */
+  transform: scale(1.1);
+  transform-origin: center center;
+  
+  /* ULTRA HIGH QUALITY RENDERING - FORCE MAXIMUM SETTINGS */
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  image-rendering: pixelated !important;
+  image-rendering: high-quality !important;
+  
+  /* PREVENT ANY QUALITY DEGRADATION */
+  will-change: transform !important;
+  backface-visibility: hidden !important;
+  perspective: 1000px !important;
+  
+  /* MAXIMUM GPU ACCELERATION */
+  transform: translate3d(0, 0, 0) scale(1.1) !important;
+  
+  /* DISABLE ALL COMPRESSION AND OPTIMIZATION */
+  filter: none !important;
+  
+  /* FORCE HARDWARE ACCELERATION ON ALL BROWSERS */
+  -webkit-transform: translate3d(0, 0, 0) scale(1.1) !important;
+  -webkit-backface-visibility: hidden !important;
+  -webkit-perspective: 1000px !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  
+  /* PREVENT BROWSER OPTIMIZATIONS */
+  contain: none !important;
+  content-visibility: visible !important;
+  
+  /* FORCE VISIBILITY */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  
+  /* PREVENT LAZY LOADING */
+  loading: eager !important;
+}
+
+/* Mobile optimizations with MAXIMUM quality preservation */
+@media (max-width: 768px) {
+  iframe[src*="spline.design"],
+  .spline-iframe {
+    transform: translate3d(0, 0, 0) scale(1.2) !important;
+    -webkit-transform: translate3d(0, 0, 0) scale(1.2) !important;
+    height: 120% !important;
+    top: -10% !important;
+    z-index: 15 !important; /* Even higher on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  iframe[src*="spline.design"],
+  .spline-iframe {
+    transform: translate3d(0, 0, 0) scale(1.3) !important;
+    -webkit-transform: translate3d(0, 0, 0) scale(1.3) !important;
+    height: 130% !important;
+    top: -15% !important;
+    z-index: 20 !important; /* Maximum z-index on small screens */
+  }
+}
+
+/* Interactive overlay for content - allows clicks to pass through to iframe where there's no content */
+.content-overlay {
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.content-overlay > * {
+  pointer-events: auto;
+}
+
+/* Animations for loading components */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
